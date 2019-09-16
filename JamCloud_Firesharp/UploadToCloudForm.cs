@@ -4,8 +4,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Firebase.Storage.HttpClient.Tasks;
 using Firebase.Storage.Client;
-
-
+using System.Threading;
 
 namespace JamCloud_Firesharp
 {
@@ -27,7 +26,7 @@ namespace JamCloud_Firesharp
             SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
         }
         #endregion
-
+        
         OpenFileDialog ofd = new OpenFileDialog();
         string fileUrl = null;
         string fileName = null;
@@ -42,15 +41,18 @@ namespace JamCloud_Firesharp
             if (ofd.ShowDialog() == DialogResult.OK)
             {
                 fileUrl = ofd.FileName;
+                UploadTask(fileUrl);
             }
-
-            UploadTask(fileUrl);
+            else
+            {
+                Close();
+            }
         }
 
         private void UploadTask(string fileUrl)
         {
             User user = new User();
-
+           
             // Get any Stream - it can be FileStream, MemoryStream or any other type of Stream
 
             var stream = File.Open(fileUrl, FileMode.Open);
@@ -68,7 +70,7 @@ namespace JamCloud_Firesharp
             task.Progress.ProgressChanged += (s, per) =>
             {
                 Console.WriteLine($"Progress: {per.Percentage} %");
-                
+
 
                 if (per.Percentage >= 0 && per.Percentage < 100)
                 {
@@ -77,13 +79,20 @@ namespace JamCloud_Firesharp
 
                 }
                 else
-                { 
-                    this.Close();
+                {
+                    Close();
                 }
             };
 
+          
+
+
+
             var downloadUrl = GetTaskAsync(task);
         }
+
+     
+  
 
         private static string ShortenPathName(FileStream stream)
         {
@@ -94,14 +103,9 @@ namespace JamCloud_Firesharp
         private async Task<string> GetTaskAsync(FirebaseStorageTask task)
         {
             var downloadUrl = await task;
+           
             return downloadUrl;
         }
-
-        private void CancelButton_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
 
     }
 }

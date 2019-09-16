@@ -38,12 +38,13 @@ namespace JamCloud_Firesharp
         {
             UploadToCloudForm upload = new UploadToCloudForm();
             upload.Show();
+            
         }
 
         private void SwitchAccountsButton_Click(object sender, EventArgs e)
         {
             LoginForm login = new LoginForm();
-            login.Show();
+            login.Show();  
             this.Close();
         }
 
@@ -60,8 +61,8 @@ namespace JamCloud_Firesharp
 
         private void DownloadButton_Click(object sender, EventArgs e)
         {
-            DownloadFromCloudForm downloadForm = new DownloadFromCloudForm();
-            downloadForm.Show();
+            DownloadFromCloudForm download = new DownloadFromCloudForm();
+            download.Show(); 
             this.Close();
         }
 

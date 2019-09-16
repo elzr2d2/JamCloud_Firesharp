@@ -58,7 +58,7 @@
             this.cancelButton.Size = new System.Drawing.Size(30, 30);
             this.cancelButton.TabIndex = 1;
             this.cancelButton.UseVisualStyleBackColor = false;
-            this.cancelButton.Click += new System.EventHandler(this.CancelButton_Click);
+    
             // 
             // pictureBox1
             // 
