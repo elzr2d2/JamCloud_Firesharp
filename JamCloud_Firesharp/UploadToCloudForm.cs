@@ -1,10 +1,7 @@
 ﻿using System;
 using System.IO;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using Firebase.Storage.HttpClient.Tasks;
 using Firebase.Storage.Client;
-using System.Threading;
 
 namespace JamCloud_Firesharp
 {
@@ -30,6 +27,7 @@ namespace JamCloud_Firesharp
         OpenFileDialog ofd = new OpenFileDialog();
         string fileUrl = null;
         string fileName = null;
+
         public UploadToCloudForm()
         {
             InitializeComponent();
@@ -52,15 +50,14 @@ namespace JamCloud_Firesharp
         private void UploadTask(string fileUrl)
         {
             User user = new User();
-           
+            
             // Get any Stream - it can be FileStream, MemoryStream or any other type of Stream
-
             var stream = File.Open(fileUrl, FileMode.Open);
             fileName = ShortenPathName(stream);
 
             filenameLabel.Text = fileName + " is being uploaded.\n It might take a while...";
-            // Construct FirebaseStorage, path to where you want to upload the file and Put it there
 
+            // Construct FirebaseStorage, path to where you want to upload the file and Put it there
             var task = new FirebaseStorage("jamcloud-db-2aea9.appspot.com")
                 .Child("jamcloud_audio")
                 .Child(user.GetCurrentUser().Username)
@@ -83,28 +80,13 @@ namespace JamCloud_Firesharp
                     Close();
                 }
             };
-
-          
-
-
-
-            var downloadUrl = GetTaskAsync(task);
         }
 
-     
-  
-
+        // Function for a better and friendly files name in the cloud stroage
         private static string ShortenPathName(FileStream stream)
         {
             string[] streamSplit = stream.Name.Split('\\');
             return streamSplit[streamSplit.Length - 1];
-        }
-
-        private async Task<string> GetTaskAsync(FirebaseStorageTask task)
-        {
-            var downloadUrl = await task;
-           
-            return downloadUrl;
         }
 
     }

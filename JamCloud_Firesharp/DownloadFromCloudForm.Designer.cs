@@ -52,10 +52,11 @@
             this.UserRepo.ForeColor = System.Drawing.Color.Orange;
             this.UserRepo.FormattingEnabled = true;
             this.UserRepo.ItemHeight = 19;
-            this.UserRepo.Location = new System.Drawing.Point(78, 162);
+            this.UserRepo.Location = new System.Drawing.Point(89, 161);
             this.UserRepo.Name = "UserRepo";
-            this.UserRepo.Size = new System.Drawing.Size(195, 135);
+            this.UserRepo.Size = new System.Drawing.Size(494, 135);
             this.UserRepo.TabIndex = 0;
+            this.UserRepo.SelectedIndexChanged += new System.EventHandler(this.UserRepo_SelectedValueChanged);
             // 
             // downloadSelectedButton
             // 
@@ -67,7 +68,7 @@
             this.downloadSelectedButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.downloadSelectedButton.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.downloadSelectedButton.ForeColor = System.Drawing.Color.Transparent;
-            this.downloadSelectedButton.Location = new System.Drawing.Point(324, 329);
+            this.downloadSelectedButton.Location = new System.Drawing.Point(291, 539);
             this.downloadSelectedButton.Name = "downloadSelectedButton";
             this.downloadSelectedButton.Size = new System.Drawing.Size(79, 58);
             this.downloadSelectedButton.TabIndex = 1;
@@ -82,16 +83,17 @@
             this.PublicRepo.ForeColor = System.Drawing.Color.Orange;
             this.PublicRepo.FormattingEnabled = true;
             this.PublicRepo.ItemHeight = 19;
-            this.PublicRepo.Location = new System.Drawing.Point(447, 162);
+            this.PublicRepo.Location = new System.Drawing.Point(89, 341);
             this.PublicRepo.Name = "PublicRepo";
-            this.PublicRepo.Size = new System.Drawing.Size(222, 135);
+            this.PublicRepo.Size = new System.Drawing.Size(494, 135);
             this.PublicRepo.TabIndex = 3;
+            this.PublicRepo.SelectedValueChanged += new System.EventHandler(this.PublicRepo_SelectedValueChanged);
             // 
             // pictureBox1
             // 
             this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox1.Location = new System.Drawing.Point(273, 12);
+            this.pictureBox1.Location = new System.Drawing.Point(252, 12);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(169, 120);
             this.pictureBox1.TabIndex = 6;
@@ -106,7 +108,7 @@
             this.backButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.backButton.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.backButton.ForeColor = System.Drawing.Color.Transparent;
-            this.backButton.Location = new System.Drawing.Point(324, 428);
+            this.backButton.Location = new System.Drawing.Point(291, 638);
             this.backButton.Name = "backButton";
             this.backButton.Size = new System.Drawing.Size(79, 58);
             this.backButton.TabIndex = 7;
@@ -117,7 +119,7 @@
             // 
             this.pictureBox2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.BackgroundImage")));
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox2.Location = new System.Drawing.Point(13, 162);
+            this.pictureBox2.Location = new System.Drawing.Point(24, 161);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(59, 42);
             this.pictureBox2.TabIndex = 8;
@@ -127,7 +129,7 @@
             // 
             this.pictureBox3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox3.BackgroundImage")));
             this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox3.Location = new System.Drawing.Point(382, 162);
+            this.pictureBox3.Location = new System.Drawing.Point(24, 341);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(59, 42);
             this.pictureBox3.TabIndex = 9;
@@ -138,7 +140,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.label1.ForeColor = System.Drawing.Color.DeepSkyBlue;
-            this.label1.Location = new System.Drawing.Point(324, 390);
+            this.label1.Location = new System.Drawing.Point(291, 600);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(79, 19);
             this.label1.TabIndex = 10;
@@ -149,7 +151,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.label2.ForeColor = System.Drawing.Color.DeepSkyBlue;
-            this.label2.Location = new System.Drawing.Point(344, 489);
+            this.label2.Location = new System.Drawing.Point(311, 699);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(41, 19);
             this.label2.TabIndex = 11;
@@ -161,7 +163,7 @@
             this.exitButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.exitButton.FlatAppearance.BorderSize = 0;
             this.exitButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.exitButton.Location = new System.Drawing.Point(687, 12);
+            this.exitButton.Location = new System.Drawing.Point(583, 12);
             this.exitButton.Name = "exitButton";
             this.exitButton.Size = new System.Drawing.Size(30, 30);
             this.exitButton.TabIndex = 12;
@@ -174,7 +176,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(729, 525);
+            this.ClientSize = new System.Drawing.Size(625, 730);
             this.Controls.Add(this.exitButton);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);

@@ -30,8 +30,12 @@ namespace JamCloud_Firesharp
         #endregion
 
         User user = new User();
+        DownloadProgressForm downloadProgress = new DownloadProgressForm();
+
         string bucketName = "jamcloud-db-2aea9.appspot.com";
-        static string fileName = null;
+        string fileName = null;
+
+        // A Json file with auths and information for accessing the cloud storage
         string myJsonFile = "jamcloud-db-2aea9-2284733e8888.json";
         SaveFileDialog sfd = new SaveFileDialog();
         string localPath = null;
@@ -43,33 +47,34 @@ namespace JamCloud_Firesharp
         }
 
         private void DownloadFromCloudForm_Load(object sender, EventArgs e)
-        {        
+        {   
+            // Getting file information from the bucket of the cloud storage
             ListObjects(bucketName);
         }
 
         private void ListObjects(string bucketName)
         {
+            // Firebase is a cloud platform which developed by Google, for getting access to the storage we need to create a path with the GoogleCredential
             string credPath = myJsonFile;
             var credential = GoogleCredential.FromStream(File.OpenRead(credPath));
             var storageClient = StorageClient.Create(credential);
 
+            // creating two lists, one of the local storage of the current user and the second of the public storage of all the users
             var listAudioFiles = storageClient.ListObjects(bucketName);
             
             foreach (var audioFileLink in listAudioFiles)
             {
                 if(audioFileLink.Name.EndsWith(".wav"))
                 {
-                    fileName = audioFileLink.Name;
 
-                    if (user.GetCurrentUser().Username == ShortenOwnerName(audioFileLink.Name))
+                    if (user.GetCurrentUser().Username == ShorthandOwnerName(audioFileLink.Name))
                     {
-                        fileName = audioFileLink.Name;
-                        UserRepo.Items.Add(ShortenLinkName(ShortenLinkName(audioFileLink.Name)));
+                        UserRepo.Items.Add(audioFileLink.Name);
                     }
                     else
                     {
 
-                        PublicRepo.Items.Add(ShortenOwnerName(audioFileLink.Name) + " - " + ShortenLinkName(audioFileLink.Name));
+                        PublicRepo.Items.Add(audioFileLink.Name);
                     }
 
                 }
@@ -86,21 +91,8 @@ namespace JamCloud_Firesharp
             return await task.GetDownloadUrlAsync();
         }
 
-        private async Task<string> UserTask(string fileName)
-        {
-            var task = new FirebaseStorage("jamcloud-db-2aea9.appspot.com")
-                .Child("jamcloud_audio");
 
-            return await task.GetDownloadUrlAsync();
-        }
-
-        private static string ShortenLinkName(string linkName)
-        {
-            string[] linkNameSplit = linkName.Split('/');
-            return linkNameSplit[linkNameSplit.Length - 1];
-        }
-
-        private static string ShortenOwnerName(string ownerName)
+        private static string ShorthandOwnerName(string ownerName)
         {
             string[] linkNameSplit = ownerName.Split('/');
             return linkNameSplit[linkNameSplit.Length - 2];
@@ -108,7 +100,17 @@ namespace JamCloud_Firesharp
 
         private void DownloadSelectedButton_Click(object sender, EventArgs e)
         {
-            DownloadObject(bucketName, fileName);
+            
+            if (UserRepo.SelectedItem != null)
+            {
+                DownloadObject(bucketName, UserRepo.SelectedItem.ToString());
+            }         
+            else if (PublicRepo.SelectedItem != null)
+            {
+                DownloadObject(bucketName, PublicRepo.SelectedItem.ToString());
+            }
+            else
+                MessageBox.Show("Please choose a file to download");
         }
 
         private void DownloadObject(string bucketName, string objectName)
@@ -122,14 +124,20 @@ namespace JamCloud_Firesharp
             {
                 
                 localPath = sfd.FileName;
+                downloadProgress.Show();
             }
 
             localPath = localPath ?? Path.GetFileName(objectName);
             using (var outputFile = File.OpenWrite(localPath))
             {
                 storageClient.DownloadObject(bucketName, objectName, outputFile);
+                
             }
             Console.WriteLine($"downloaded {objectName} to {localPath}.");
+            downloadProgress.Close();
+            var menu = new MenuForm();
+            menu.Show();
+            Close();
         }
 
         private void ClipboardButton_Click(object sender, EventArgs e)
@@ -139,18 +147,29 @@ namespace JamCloud_Firesharp
 
         private void BackButton_Click(object sender, EventArgs e)
         {
-            MenuForm menu = new MenuForm();
+            var menu = new MenuForm();
             menu.Show();
-            this.Close();
+            Close();
         }
 
         private void ExitButton_Click(object sender, EventArgs e)
         {
 
-            this.Close();
+            Close();
             Application.Exit();
 
         }
 
+        private void PublicRepo_SelectedValueChanged(object sender, EventArgs e)
+        {
+            UserRepo.ClearSelected();
+          
+        }
+
+        private void UserRepo_SelectedValueChanged(object sender, EventArgs e)
+        {
+            PublicRepo.ClearSelected();
+
+        }
     }
 }

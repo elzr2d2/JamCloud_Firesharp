@@ -243,17 +243,17 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CurrentUserForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="CurrentUserForm.Designer.cs">
-      <DependentUpon>CurrentUserForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="DownloadFromCloudForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="DownloadFromCloudForm.Designer.cs">
       <DependentUpon>DownloadFromCloudForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DownloadProgressForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DownloadProgressForm.Designer.cs">
+      <DependentUpon>DownloadProgressForm.cs</DependentUpon>
     </Compile>
     <Compile Include="MenuForm.cs">
       <SubType>Form</SubType>
@@ -284,11 +284,11 @@
       <DependentUpon>Register.cs</DependentUpon>
     </Compile>
     <Compile Include="User.cs" />
-    <EmbeddedResource Include="CurrentUserForm.resx">
-      <DependentUpon>CurrentUserForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="DownloadFromCloudForm.resx">
       <DependentUpon>DownloadFromCloudForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DownloadProgressForm.resx">
+      <DependentUpon>DownloadProgressForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>

@@ -27,14 +27,14 @@ namespace JamCloud_Firesharp
         }
 
         #endregion
+        private IFirebaseClient client;
 
+        // Implementing Auth and path for user validation
         private readonly IFirebaseConfig config = new FirebaseConfig
         {
             AuthSecret = "i4uPx0ZBQRvllWkkDafNkIbILnVaxdRGGVkRMm27",
             BasePath = "https://jamcloud-db-2aea9.firebaseio.com/"
         };
-
-        private IFirebaseClient client;
 
         public LoginForm()
         {
@@ -74,6 +74,7 @@ namespace JamCloud_Firesharp
                 Password = passwordTB.Text
             };
 
+            // User validation check
             if (User.IsEqual(ResUser, CurrentUser))
             {
                 var menuForm = new MenuForm();

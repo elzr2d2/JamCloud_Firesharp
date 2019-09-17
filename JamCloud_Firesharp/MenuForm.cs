@@ -1,12 +1,4 @@
-﻿using JamCloud_Firesharp;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System;
 using System.Windows.Forms;
 
 namespace JamCloud_Firesharp
@@ -36,21 +28,21 @@ namespace JamCloud_Firesharp
 
         private void UploadButton_Click(object sender, EventArgs e)
         {
-            UploadToCloudForm upload = new UploadToCloudForm();
+            var upload = new UploadToCloudForm();
             upload.Show();
             
         }
 
         private void SwitchAccountsButton_Click(object sender, EventArgs e)
         {
-            LoginForm login = new LoginForm();
+            var login = new LoginForm();
             login.Show();  
-            this.Close();
+            Close();
         }
 
         private void ExitButton_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Close();
             Application.Exit();
         }
 
@@ -61,14 +53,10 @@ namespace JamCloud_Firesharp
 
         private void DownloadButton_Click(object sender, EventArgs e)
         {
-            DownloadFromCloudForm download = new DownloadFromCloudForm();
+            var download = new DownloadFromCloudForm();
             download.Show(); 
-            this.Close();
+            Close();
         }
 
-        private void LogoutButton_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }
