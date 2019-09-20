@@ -30,7 +30,7 @@ namespace JamCloud_Firesharp
         #endregion
 
         User user = new User();
-        DownloadProgressForm downloadProgress = new DownloadProgressForm();
+        //DownloadProgressForm downloadProgress = new DownloadProgressForm();
 
         string bucketName = "jamcloud-db-2aea9.appspot.com";
         string fileName = null;
@@ -124,7 +124,7 @@ namespace JamCloud_Firesharp
             {
                 
                 localPath = sfd.FileName;
-                downloadProgress.Show();
+                //downloadProgress.Show();
             }
 
             localPath = localPath ?? Path.GetFileName(objectName);
@@ -134,7 +134,7 @@ namespace JamCloud_Firesharp
                 
             }
             Console.WriteLine($"downloaded {objectName} to {localPath}.");
-            downloadProgress.Close();
+            //downloadProgress.Close();
             var menu = new MenuForm();
             menu.Show();
             Close();

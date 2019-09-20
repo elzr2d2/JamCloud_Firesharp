@@ -55,7 +55,7 @@
             this.fullnameTB.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.fullnameTB.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.fullnameTB.ForeColor = System.Drawing.Color.Orange;
-            this.fullnameTB.Location = new System.Drawing.Point(147, 134);
+            this.fullnameTB.Location = new System.Drawing.Point(145, 133);
             this.fullnameTB.Name = "fullnameTB";
             this.fullnameTB.Size = new System.Drawing.Size(215, 27);
             this.fullnameTB.TabIndex = 0;
@@ -64,42 +64,46 @@
             // 
             this.usernameTB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
             this.usernameTB.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.usernameTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.usernameTB.Location = new System.Drawing.Point(147, 214);
+            this.usernameTB.Font = new System.Drawing.Font("Calibri", 12F);
+            this.usernameTB.ForeColor = System.Drawing.Color.Orange;
+            this.usernameTB.Location = new System.Drawing.Point(145, 200);
             this.usernameTB.Name = "usernameTB";
-            this.usernameTB.Size = new System.Drawing.Size(215, 26);
+            this.usernameTB.Size = new System.Drawing.Size(215, 27);
             this.usernameTB.TabIndex = 1;
             // 
             // emailTB
             // 
             this.emailTB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
             this.emailTB.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.emailTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.emailTB.Location = new System.Drawing.Point(147, 286);
+            this.emailTB.Font = new System.Drawing.Font("Calibri", 12F);
+            this.emailTB.ForeColor = System.Drawing.Color.Orange;
+            this.emailTB.Location = new System.Drawing.Point(145, 268);
             this.emailTB.Name = "emailTB";
-            this.emailTB.Size = new System.Drawing.Size(215, 26);
+            this.emailTB.Size = new System.Drawing.Size(215, 27);
             this.emailTB.TabIndex = 2;
             // 
             // passwordTB
             // 
             this.passwordTB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
             this.passwordTB.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.passwordTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.passwordTB.Location = new System.Drawing.Point(147, 369);
+            this.passwordTB.Font = new System.Drawing.Font("Calibri", 12F);
+            this.passwordTB.ForeColor = System.Drawing.Color.Orange;
+            this.passwordTB.Location = new System.Drawing.Point(145, 334);
             this.passwordTB.Name = "passwordTB";
             this.passwordTB.PasswordChar = '*';
-            this.passwordTB.Size = new System.Drawing.Size(215, 26);
+            this.passwordTB.Size = new System.Drawing.Size(215, 27);
             this.passwordTB.TabIndex = 3;
             // 
             // confirmpasswordTB
             // 
             this.confirmpasswordTB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
             this.confirmpasswordTB.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.confirmpasswordTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.confirmpasswordTB.Location = new System.Drawing.Point(146, 462);
+            this.confirmpasswordTB.Font = new System.Drawing.Font("Calibri", 12F);
+            this.confirmpasswordTB.ForeColor = System.Drawing.Color.Orange;
+            this.confirmpasswordTB.Location = new System.Drawing.Point(145, 412);
             this.confirmpasswordTB.Name = "confirmpasswordTB";
             this.confirmpasswordTB.PasswordChar = '*';
-            this.confirmpasswordTB.Size = new System.Drawing.Size(215, 26);
+            this.confirmpasswordTB.Size = new System.Drawing.Size(215, 27);
             this.confirmpasswordTB.TabIndex = 4;
             // 
             // SignupButton
@@ -108,7 +112,7 @@
             this.SignupButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.SignupButton.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.SignupButton.ForeColor = System.Drawing.Color.Orange;
-            this.SignupButton.Location = new System.Drawing.Point(145, 535);
+            this.SignupButton.Location = new System.Drawing.Point(145, 477);
             this.SignupButton.Name = "SignupButton";
             this.SignupButton.Size = new System.Drawing.Size(215, 55);
             this.SignupButton.TabIndex = 5;
@@ -146,7 +150,7 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.label3.ForeColor = System.Drawing.Color.DeepSkyBlue;
-            this.label3.Location = new System.Drawing.Point(143, 112);
+            this.label3.Location = new System.Drawing.Point(141, 111);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(77, 19);
             this.label3.TabIndex = 8;
@@ -158,7 +162,7 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.label4.ForeColor = System.Drawing.Color.DeepSkyBlue;
-            this.label4.Location = new System.Drawing.Point(143, 192);
+            this.label4.Location = new System.Drawing.Point(141, 178);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(83, 19);
             this.label4.TabIndex = 9;
@@ -170,7 +174,7 @@
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.label5.ForeColor = System.Drawing.Color.DeepSkyBlue;
-            this.label5.Location = new System.Drawing.Point(143, 264);
+            this.label5.Location = new System.Drawing.Point(141, 246);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(46, 19);
             this.label5.TabIndex = 10;
@@ -182,7 +186,7 @@
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.label6.ForeColor = System.Drawing.Color.DeepSkyBlue;
-            this.label6.Location = new System.Drawing.Point(142, 340);
+            this.label6.Location = new System.Drawing.Point(140, 305);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(74, 19);
             this.label6.TabIndex = 11;
@@ -194,7 +198,7 @@
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.label7.ForeColor = System.Drawing.Color.DeepSkyBlue;
-            this.label7.Location = new System.Drawing.Point(141, 433);
+            this.label7.Location = new System.Drawing.Point(140, 383);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(132, 19);
             this.label7.TabIndex = 12;
@@ -204,7 +208,7 @@
             // 
             this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox1.Location = new System.Drawing.Point(405, 579);
+            this.pictureBox1.Location = new System.Drawing.Point(409, 534);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(91, 74);
             this.pictureBox1.TabIndex = 13;
@@ -231,7 +235,7 @@
             this.backButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.backButton.FlatAppearance.BorderSize = 0;
             this.backButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.backButton.Location = new System.Drawing.Point(12, 579);
+            this.backButton.Location = new System.Drawing.Point(14, 519);
             this.backButton.Name = "backButton";
             this.backButton.Size = new System.Drawing.Size(64, 64);
             this.backButton.TabIndex = 15;
@@ -244,7 +248,7 @@
             this.label8.BackColor = System.Drawing.Color.Transparent;
             this.label8.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.label8.ForeColor = System.Drawing.Color.DeepSkyBlue;
-            this.label8.Location = new System.Drawing.Point(23, 646);
+            this.label8.Location = new System.Drawing.Point(27, 586);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(41, 19);
             this.label8.TabIndex = 16;
@@ -256,7 +260,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(508, 678);
+            this.ClientSize = new System.Drawing.Size(508, 620);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.backButton);
             this.Controls.Add(this.exitButton);

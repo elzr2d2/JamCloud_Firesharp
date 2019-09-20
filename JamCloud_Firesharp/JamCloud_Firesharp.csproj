@@ -249,12 +249,6 @@
     <Compile Include="DownloadFromCloudForm.Designer.cs">
       <DependentUpon>DownloadFromCloudForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="DownloadProgressForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="DownloadProgressForm.Designer.cs">
-      <DependentUpon>DownloadProgressForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="MenuForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -286,9 +280,6 @@
     <Compile Include="User.cs" />
     <EmbeddedResource Include="DownloadFromCloudForm.resx">
       <DependentUpon>DownloadFromCloudForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="DownloadProgressForm.resx">
-      <DependentUpon>DownloadProgressForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
